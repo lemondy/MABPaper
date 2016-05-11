@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{agrawal2011analysis}
+Shipra Agrawal and Navin Goyal.
+\newblock Analysis of thompson sampling for the multi-armed bandit problem.
+\newblock {\em arXiv preprint arXiv:1111.1797}, 2011.
+
+\bibitem{jain2014multiarmed}
+Shweta Jain, Balakrishnan Narayanaswamy, and Y~Narahari.
+\newblock A multiarmed bandit incentive mechanism for crowdsourcing demand
+  response in smart grids.
+\newblock In {\em Twenty-Eighth AAAI Conference on Artificial Intelligence},
+  2014.
+
+\bibitem{xiao2015multi}
+Mingjun Xiao, Jie Wu, Liusheng Huang, Yunsheng Wang, and Cong Liu.
+\newblock Multi-task assignment for crowdsensing in mobile social networks.
+\newblock In {\em Computer Communications (INFOCOM), 2015 IEEE Conference on},
+  pages 2227--2235. IEEE, 2015.
+
+\end{thebibliography}
