@@ -181,10 +181,12 @@ Thompson sampling(TS) is one of the earliest heuristics for multi-armed bandit p
  \begin{itemize}
    \item a set $\theta $ of parameters ${\tilde \mu }$ ;
    \item a prior distribution $P({\tilde \mu})$ on these parameters;
-   \item 
-   \item 
-   \item 
+   \item past observations $D$ consisting of (context b, reward r) for the past time steps
+   \item a likelihood function $P(r|b,\tilde \mu )$, which gives the probability of reward given a context b and a parameter ${\tilde \mu}$;
+   \item a posterior distribution $P(\tilde \mu |D) \propto P(D|\tilde \mu )P(\tilde \mu )$, where $P(D|\tilde \mu)$  is the likelihood function.
  \end{itemize}
+ 
+ In each round, TS plays an arm according to its posterior probability of having the best parameter. A simple way to achieve this is to produce a sample of parameter for each arm, using the posterior distribution, and play the arm that produces the best sample. 
 
 \section{RELATED WORK}
 
