@@ -125,7 +125,7 @@ The multi-armed bandit problem has attracted remarkable attention in the machine
 
 % Note that keywords are not normally used for peerreview papers.
 \begin{IEEEkeywords}
-Task Allocation, multiarmed bandits, cellular network, reward maximization
+Task Allocation, multiarmed bandits, cellular network, reward maximization, Thompson sampling
 \end{IEEEkeywords}}
 
 
@@ -174,9 +174,9 @@ Consider that a user carried mobile phone in an mobile social network has some i
 
 In this paper, we focus on the above task allocation problem. In this problem, choosing a best worker from the requester's contacts. Selects best worker just like choose excellent contractor, which will let the utility maximize of the requester.
 
-To solve the above task allocation problem in mobile crowdsensing, we proposed a based multi-armed bandits algorithm with incentive mechanism, which is called Thompson sampling task allocation(TS-TA). We choose Thompson sampling to handle this problem. 
+To solve the above task allocation problem in mobile crowdsensing, we proposed a based multi-armed bandits algorithm with incentive mechanism, which is called Thompson sampling task allocation(TS-TA). We choose Thompson sampling to handle this problem.
 
-Thompson sampling(TS) is one of the earliest heuristics for multi-armed bandit problems. The first Bayesian heuristics is around 80 years old, dating to Thompson(1933). Since then, it has been rediscovered numerous times independently in the context of reinforcement learning, e.g., in [?][?]. It is a member of the family of \textit{randomized probability matching} algorithms.    \cite{agrawal2011analysis} has
+Thompson sampling(TS) is one of the earliest heuristics for multi-armed bandit problems. The first Bayesian heuristics is around 80 years old, dating to Thompson(1933). Since then, it has been rediscovered numerous times independently in the context of reinforcement learning, e.g., in [?][?]. It is a member of the family of \textit{randomized probability matching} algorithms. The basic idea is to assume a simple prior distribution on the underlying parameters of the reward distribution of every arm, and at every time step, play an arm according to its posterior probability of being the best arm. 
 
 \section{RELATED WORK}
 
@@ -418,8 +418,8 @@ let's say more clearly about the two probability:\\
 \section{Simulation Experiments}
 
 \section{Conclusion}
-The conclusion goes here.
 
+\setlength{\parindent}{2em}In this paper, we study the task allocation problem for crowdsensing. In order to select the best worker from the requester's contacts, we proposed thompson sampling allocation algorithm with incentive mechanism. This algorithm can make sure long run and keep the regret stay low. We showed that intuition from crowdsourcing mechansim is useful, and our algorithm follow the DISC and IR constrains. Analysis of TS-TA showed that it achieves regret of .
 
 
 
