@@ -185,8 +185,8 @@ Thompson sampling(TS) is one of the earliest heuristics for multi-armed bandit p
    \item a likelihood function $P(r|b,\tilde \mu )$, which gives the probability of reward given a context b and a parameter ${\tilde \mu}$;
    \item a posterior distribution $P(\tilde \mu |D) \propto P(D|\tilde \mu )P(\tilde \mu )$, where $P(D|\tilde \mu)$  is the likelihood function.
  \end{itemize}
- 
- In each round, TS plays an arm according to its posterior probability of having the best parameter. A simple way to achieve this is to produce a sample of parameter for each arm, using the posterior distribution, and play the arm that produces the best sample. 
+
+ In each round, TS plays an arm according to its posterior probability of having the best parameter. A simple way to achieve this is to produce a sample of parameter for each arm, using the posterior distribution, and play the arm that produces the best sample.
 
 \section{RELATED WORK}
 
@@ -255,6 +255,15 @@ Consider a network denoted by a graph ${G^t} = ({V^t},{E^t})$ at time t with a s
 \setlength{\parindent}{2em}At each round t, an K-dimensional \emph{strategy} vector ${\Phi _0}(t) = \{ {\Phi _{0,i}}|i = 1,...,K\}$ is selected under some \emph{policy} from the \emph{feasible strategy set} F. Here ${\Phi _{0,i}}$ is the index of relay node selected by node carried message in strategy $\Phi _0$. We use i=1,...,K to index strategies of feasible set F in XXXXX. By feasible we mean at that time slot, carried message node meet another k nodes(who can communicate with the message carrier directly). When a strategy $\Phi _0$ is determined, then one node $v _i$ will be selected, and it will give back a reward $r _i(t)$. And then the total reward of T round is defined as $R = \sum\nolimits_{t = 1}^T {r(t)}$. The goal of this allocation problem is to maximize the accumulated reward $R$ over the T rounds. Obviously, if the reward of every node is constant, then we can simply choose the node who will have maximize reward every time slot. While in our problem, the reward is variable over time. And it's probability distribution follows $f(x,\theta )$ where $\theta$ is an unknown parameter. The gap between the actual total reward we get and the optimal total reward theoretically is call regret of the algorithm, and it can be formally written as $RE = \sum\nolimits_{t = 1}^T {{r^*}(t)}  - \sum\nolimits_{t = 1}^T {r(t)}$, where $r^*$ is the max reward we can get every time slot. The goal of the algorithm is to keep the regret $RE$ as low as possible.
 
 \setlength{\parindent}{2em}An allocation strategy(also called a policy) $\pi$ specifies the action chosen by the task requester(carried message node) at each time in the system. Formally, $\pi$ is a sequence of random variables $\pi  = \{ {\pi ^1},{\pi ^2},...,{\pi ^T}\}$ where ${\pi ^t} = \{ a_1^t,a_2^t,...,a_k^t\}$ is the vector of zeros and ones(deterministic mechanism). If $a_i^t=1$ then node i will be chosen as a relay node at slot t, whereas, $a_i^t=0$ means node i doesn't be chosen at all, i.e., $\forall t,\sum\nolimits_i {{a^t}}  \le 1$.
+
+%%考虑arm的payoff是线性的。
+There are K arms at time t for a requester, a context vector ${b_i}(t) \in {R^d}$, is revealed for every arm i. These context vectors are chosen by a requester in an adaptive manner after observing the arms played and their rewards up to time t-1, i.e. history $H_{t-1}$,
+
+${H_{t - 1}} = \{ a(\tau ),{r_{a(\tau )}}(\tau ),{b_i}(\tau ),i = 1,...,K,\tau  = 1,...,t - 1\} $,
+
+where $a(\tau)$ denotes the worker played at time $\tau$, ${r_{a(\tau )}}(\tau )$ denotes when chose arm $a$ the reward you have gotten. Given ${b_i}(t)$, the reward for arm i at time t is generated from an (unknown) distribution with mean ${b_i}(t)\mu$, where $\mu \in {R^d}$ is a fixed but unknown parameter \cite{agrawal2012thompson}.
+
+$E[{r_i}(t)|\{ {b_i}(t)\} _{i = 1}^K,{H_{t - 1}}] = E[{r_i}(t)|\{ {b_i}(t)\} ] = {b_i}{(t)^T}\mu$.
 
 \setlength{\parindent}{2em}The regret of strategy $\pi$ at time t is defined as follows:
 \begin{equation}

@@ -5,7 +5,7 @@ from matplotlib import pylab as plt
 
 # generate all bernoulli rewards ahead of time
 def generate_bernoulli_bandit_data(num_samples,K):
-    CTRs_that_generated_data = np.tile(np.random.rand(K),(num_samples,1))
+    CTRs_that_generated_data = np.tile(np.random.rand(K),(num_samples,1))   #tile重复的扩充数组，把第一个元素当成一个元素，后面指定几行几列
     true_rewards = np.random.rand(num_samples,K) < CTRs_that_generated_data
     return true_rewards,CTRs_that_generated_data
 

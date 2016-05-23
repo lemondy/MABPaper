@@ -5,7 +5,9 @@ import random
 import task
 from scipy import stats
 import math
-
+from scipy import linalg
+import numpy as np
+from matplotlib import pylab as plt
 #contactdict = data_operation.contactdict   #user contacts
 
 
@@ -31,15 +33,15 @@ def getTaskValue(duration):
 tasksdict = dict()
 tid = 1
 
-for t in range(starttime, Time, task_generate_rate):
-	#node = random.randint(1,100)
-	duration = random.randint(3600, 36000)           #one hour--ten hour
-	value = getTaskValue(duration)
+# for t in range(starttime, Time, task_generate_rate):
+# 	#node = random.randint(1,100)
+# 	duration = random.randint(3600, 36000)           #one hour--ten hour
+# 	value = getTaskValue(duration)
 
-	task = Task(tid, duration, value)
-	tasksdict[t] = task
-	tid += 1
-print 'tid',tid
+# 	task = Task(tid, duration, value)
+# 	tasksdict[t] = task
+# 	tid += 1
+# print 'tid',tid
 
 def init(D, ARMS):
     '''    
@@ -60,13 +62,87 @@ def init(D, ARMS):
 
 
 
-def thompsonTaskAllocation(T):
+def  thompsonSampling(d, b):
+	'''
 
-	for t in range(starttime,T):
-		if tasksdict.has_key(t):
-			#allocate task
+	- d: feature dimension
+	'''
+	mu_true = np.random.rand(d)
+	#单位矩阵
+	B = np.identity(d)   #d*d
+	mu_param = np.zeros(d)
+	f = np.zeros(d)
+	R = 1.0
+	epsilon = 0.1
+	delta = 0.1
 
-	return 
+	v = R*math.pow((24.0/epsilon)*d*math.log(1.0/delta),1/2)
+
+	selectedArm = dict()
+	regret = 0
+	cumulateregret = []
+	reward = []
+
+	for t in range(1000):
+		B_inv = linalg.inv(B) #inverse
+		temp = v*v*B_inv
+		
+		deviation = np.sqrt(temp.sum(1))
+		mu_sample = np.random.normal(mu_param, deviation)
+
+		#对每一个context 计算 b*mu
+		
+		for i in range(len(b)):
+			maxValue = 0.0
+			selecteIndex = 0
+
+			true_maxValue = 0.0
+			true_index = 0
+			if maxValue < np.dot(b[i].T,mu_sample):
+				maxValue = np.dot(b[i].T, mu_sample)
+				selecteIndex = i
+			#true reward
+			if true_maxValue < np.dot(b[i].T, mu_true):
+				true_maxValue = np.dot( b[i].T, mu_true)
+				true_index = i
+
+			if true_index == selecteIndex:
+				regret += 0
+			else:
+				regret += (true_maxValue-maxValue)
+			cumulateregret.append(regret)
+
+
+
+		B += np.dot(b[selecteIndex], b[selecteIndex].T)
+		f += b[selecteIndex]*maxValue
+		mu_param = np.dot(B_inv, f)
+		reward.append(maxValue)
+		#print 'selected arm',selecteIndex,'regret', cumulateregret
+
+
+	plt.semilogy(reward)   #对数坐标图
+	plt.title('reward')
+	plt.ylabel('Cumulative reward')
+	plt.xlabel('Round Index')
+	plt.legend(('Reward'),loc='lower right')
+	plt.show()
+
+	plt.plot(cumulateregret)
+	plt.show()
+
+
+d=4
+b=np.random.rand(10,4)
+thompsonSampling(d,b)
+
+# def thompsonTaskAllocation(T):
+
+# 	for t in range(starttime,T):
+# 		if tasksdict.has_key(t):
+# 			#allocate task
+
+# 	return 
 
 
 
