@@ -265,10 +265,13 @@ where $a(\tau)$ denotes the worker played at time $\tau$, ${r_{a(\tau )}}(\tau )
 
 $E[{r_i}(t)|\{ {b_i}(t)\} _{i = 1}^K,{H_{t - 1}}] = E[{r_i}(t)|\{ {b_i}(t)\} ] = {b_i}{(t)^T}\mu$.
 
-\setlength{\parindent}{2em}The regret of strategy $\pi$ at time t is defined as follows:
+At every time slot t, for the contextual bandit problem algorithm needs to select an arm $a(t)$ to play, using history $H _t-1$ and current contexts ${b _i}(t), i=1,...,K$. Let ${a^*}(t)$ denote the optimal arm at time t, i.e. ${a^*}(t) = \arg {\max _i}{b_i}{(t)^T}\mu $. And then the regret of strategy $\pi$ at time t is defined as follows:
+
 \begin{equation}
 {RE^\pi } = \sum\limits_{t = 1}^T {\{ {r^*}(t) - \sum\limits_{i = 1}^K {{a_i}{r_i}(t)} \} }
 \end{equation}
+
+
 
 we now define some of the desirable properties that an allocation policy show satisfy:\\
 \emph{\textbf{Definition 1} Allocation Efficiency(AE)}: An allocation policy $\pi$ is said to be allocation efficiency if it minimize the regret. Formally, $\pi$ is allocation efficiency if:
