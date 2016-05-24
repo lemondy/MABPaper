@@ -1,3 +1,5 @@
+#!/use/bin/env python
+#-*- encoding: utf-8 -*-
 import numpy as np
 from matplotlib import pylab as plt
 #from mpltools import style # uncomment for prettier plots
@@ -84,7 +86,7 @@ def thompson_sampling_normal(observed_data):
     estimated_means,estimated_variances_of_means= bernoulli_mean_and_variance_of_mean(observed_data)
     estimated_deviation=np.sqrt(estimated_variances_of_means)
     sample_points=np.random.normal(estimated_means,estimated_deviation)
-    return np.argmax(sample_points)
+    return np.argmax(sample_points)    #元素最大的下标
 
 # the bandit algorithm
 def run_bandit_alg(true_rewards,CTRs_that_generated_data,choice_func):
@@ -111,9 +113,9 @@ def run_bandit_alg(true_rewards,CTRs_that_generated_data,choice_func):
         
         # updated expected regret
         regret[i] = np.max(CTRs_that_generated_data[i,:]) - CTRs_that_generated_data[i,this_choice]
-
+    print 'regret',regret
     cum_regret = np.cumsum(regret)
-
+    print 'cum_regret',cum_regret
     return cum_regret
     
 # define number of samples and number of choices
@@ -132,6 +134,7 @@ for i in range(number_experiments):
     regret_accumulator[:,4] += run_bandit_alg(true_rewards,CTRs_that_generated_data,UCB_normal)
     regret_accumulator[:,5] += run_bandit_alg(true_rewards,CTRs_that_generated_data,thompson_sampling)
     regret_accumulator[:,6] += run_bandit_alg(true_rewards,CTRs_that_generated_data,thompson_sampling_normal)
+    #print regret_accumulator[:,6],'len',len(regret_accumulator[:,6])
     
 plt.semilogy(regret_accumulator/number_experiments)
 plt.title('Simulated Bandit Performance for K = 10')
