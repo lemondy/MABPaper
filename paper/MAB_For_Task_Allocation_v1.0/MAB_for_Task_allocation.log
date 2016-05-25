@@ -1,14 +1,14 @@
-This is XeTeX, Version 3.1415926-2.2-0.9997.4 (MiKTeX 2.9) (preloaded format=xelatex 2015.9.14)  23 MAY 2016 16:59
+This is XeTeX, Version 3.1415926-2.2-0.9997.4 (MiKTeX 2.9) (preloaded format=xelatex 2016.4.7)  25 MAY 2016 22:47
 entering extended mode
 **MAB_for_Task_allocation.tex
 
-(C:\Users\Administrator\Desktop\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MAB
-_for_Task_allocation.tex
+(C:\Users\lemon\Desktop\MABForTA\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MA
+B_for_Task_allocation.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for loaded.
 
-(C:\Users\Administrator\Desktop\MABPaper\paper\MAB_For_Task_Allocation_v1.0\IEE
-Etran.cls
+(C:\Users\lemon\Desktop\MABForTA\MABPaper\paper\MAB_For_Task_Allocation_v1.0\IE
+EEtran.cls
 Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -669,8 +669,8 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
-(C:\Users\Administrator\Desktop\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MAB
-_for_Task_allocation.aux)
+(C:\Users\lemon\Desktop\MABForTA\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MA
+B_for_Task_allocation.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
 LaTeX Font Info:    ... okay on input line 92.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
@@ -754,85 +754,80 @@ LaTeX Warning: Citation `agrawal2012thompson' on page 2 undefined on input line
  264.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 277--278
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 279--280
+Underfull \hbox (badness 1377) in paragraph at lines 281--282
 []\EU1/lmr/bx/it/9.53561 Definition 2 \EU1/lmr/m/it/9.53561 Dominant Strategy I
 ncentive Compatibili-
  []
 
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 340 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 341 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 342 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 343 replaced by U+FFFD.
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 393--396
+Underfull \hbox (badness 10000) in paragraph at lines 395--398
 
  []
 
 
-Underfull \hbox (badness 2707) in paragraph at lines 401--402
+Underfull \hbox (badness 2707) in paragraph at lines 403--404
 \EU1/lmr/m/n/9.53561 Sampling algorithm. More precisely, suppose that the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
-
  []
 
 
@@ -841,18 +836,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 403--404
  []
 
 
-Underfull \hbox (badness 5064) in paragraph at lines 405--407
+Underfull \hbox (badness 10000) in paragraph at lines 405--406
+
+ []
+
+
+Underfull \hbox (badness 5064) in paragraph at lines 407--409
 \EU1/lmr/m/n/9.53561 Then, if the prior for $\OML/cmm/m/it/10 ^^V$ \EU1/lmr/m/n
 /9.53561 at time t is given by
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--407
+Underfull \hbox (badness 10000) in paragraph at lines 407--409
 
  []
 
 
-Underfull \hbox (badness 2326) in paragraph at lines 419--420
+Underfull \hbox (badness 2326) in paragraph at lines 421--422
 [] []\EU1/lmr/m/n/9.53561 Update $\OML/cmm/m/it/10 B \OT1/cmr/m/n/10 = \OML/cmm
 /m/it/10 B \OT1/cmr/m/n/10 + [](\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )[][]\OML/cmm
 /m/it/10 ; f \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 f \OT1/cmr/m/n/10 +
@@ -861,19 +861,19 @@ Underfull \hbox (badness 2326) in paragraph at lines 419--420
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Invalid UTF-8 byte or sequence at line 523 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 523 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 523 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 523 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 523 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 523 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 523 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 523 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 525 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 525 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 525 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 525 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 525 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 525 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 525 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 525 replaced by U+FFFD.
 
-(C:\Users\Administrator\Desktop\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MAB
-_for_Task_allocation.bbl) [4]
-(C:\Users\Administrator\Desktop\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MAB
-_for_Task_allocation.aux)
+(C:\Users\lemon\Desktop\MABForTA\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MA
+B_for_Task_allocation.bbl) [4]
+(C:\Users\lemon\Desktop\MABForTA\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MA
+B_for_Task_allocation.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -883,7 +883,7 @@ LaTeX Warning: There were undefined references.
  ) 
 Here is how much of TeX's memory you used:
  14007 strings out of 430486
- 236077 string characters out of 3191694
+ 236082 string characters out of 3191695
  331753 words of memory out of 3000000
  16906 multiletter control sequences out of 15000+200000
  32796 words of font info for 159 fonts, out of 3000000 for 9000
