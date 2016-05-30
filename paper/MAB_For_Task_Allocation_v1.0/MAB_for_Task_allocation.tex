@@ -243,6 +243,9 @@ As mentioned before, MAB benefits from a wide range of variations in the setting
 \section{A Parallel with Crowdsourcing}
 "Crowdsourcing is the act of taking job traditionally performed by a designated agent(usually an employee) and outsourcing it to an undefined, generally large group of people in the form of an open call", this is what Jeff Howe ever offered the definition of crowdsourcing. The designated agent is often called the requester, while people working on the task are called crowd workers. The requester needs to assign the task to these workers with unknown capability and willingness to complete the task based on the goals to achieve. In mobile crowdsensing network, there is a task publisher at some time, and he/she can chooses a worker from his/her contacts. The task publisher just like the requester, while his/her contacts just like the group of works. Table 1 precisely demonstrates this paralle between crowdsoucing and mobile crowdsensing.
 
+\section{A Parallel with MAB}
+
+
 \section{Related Work on MAB Problem}
 
 
@@ -271,7 +274,13 @@ At every time slot t, for the contextual bandit problem algorithm needs to selec
 {RE^\pi } = \sum\limits_{t = 1}^T {\{ {r^*}(t) - \sum\limits_{i = 1}^K {{a_i}{r_i}(t)} \} }
 \end{equation}
 
+The objective is to minimize the total regret $RE$ in overall T. The time horizon T is finite but possibly unknown.
 
+Suppose that ${\eta _{i,t}} = {r_i}(t) - {b_i}{(t)^T}\mu $ is conditionally R-sub-Gaussian for a constant $c \ge 0$ just like in agrawal2012thompson, i.e.,
+
+${\forall \lambda  \in R}$,$E[{e^{\lambda {\eta _{i,t}}}}|\{ {b_i}(t)\} _{i =1}^N,{H_{t - 1}}] \le \exp (\frac{{{\lambda ^2}{c^2}}}{2})$
+
+This assumption is satisfied whenever ${r_i}(t) \in [{b_i}{(t)^T}\mu  - c,{b_i}{(t)^T}\mu  + c]$ (see Remark 1 in Appendix Filippi et al.(2010)). We will also assume that $\left\| {{b_i}(t)} \right\| \le 1,\left\| \mu  \right\| \le 1$, and $regre{t_i}(t) \le 1$ for all i,t (the norms, unless otherwise indicated, are $L _2$-norms). These assumptions are required to make the regret bounds scale-free, and are standard in the literature on this problem. If $\left\| {{b_i}(t)} \right\| \le \alpha ,\left\| \mu  \right\| \le \alpha , regret_i (t) \le \alpha$ instead, then our regret bounds would increase by a factor of $\alpha$.
 
 we now define some of the desirable properties that an allocation policy show satisfy:\\
 \emph{\textbf{Definition 1} Allocation Efficiency(AE)}: An allocation policy $\pi$ is said to be allocation efficiency if it minimize the regret. Formally, $\pi$ is allocation efficiency if:
@@ -400,7 +409,7 @@ let's say more clearly about the two probability:\\
  $p({\mu _a}|dat{a_a}) = Beta({S _a,t}+1, {F_a,t}+1)$,\\
  where the added 1's are convenient priors.
 
- In our problem, we use Gaussian likelihood function and Gaussian prior to design our version of Thompson Sampling algorithm. More precisely, suppose that the likelihood of reward ${r _i}(t)$ at time t, given context ${b _i}(t)$ and parameter ${\mu}$, were given by the pdf of Gaussian distribution $N({b_i}{(t)^T}\mu ,{v ^2})$. Here, $v = R\sqrt {\frac{{24}}{\varepsilon }d\ln (\frac{1}{\delta })} $, with $\varepsilon  \in (0,1)$ which parameterizes our algorithm. Let\\
+ In our problem, we use Gaussian likelihood function and Gaussian prior to design our version of Thompson Sampling algorithm. More precisely, suppose that the likelihood of reward ${r _i}(t)$ at time t, given context ${b _i}(t)$ and parameter ${\mu}$, were given by the pdf of Gaussian distribution $N({b_i}{(t)^T}\mu ,{v ^2})$. Here, $v = R\sqrt {\frac{{24}}{\varepsilon }d\ln (\frac{1}{\delta })} $, with $\varepsilon  \in (0,1)$ which parameterizes our algorithm,just like \cite{agrawal2012thompson}. Let\\
 
  \setlength{\parindent}{4em}$B(t) = {I_d} + \sum\nolimits_{\tau  = 1}^{t - 1} {{b_{a(t)}}(\tau ){b_{a(t)}}{{(\tau )}^T}} $\\
 
@@ -435,9 +444,19 @@ let's say more clearly about the two probability:\\
 \end{algorithmic}
 \end{algorithm}
 
+At every step t of Thompson Sampling task allocation algorithm consists of generating a d-dimensional sample ${\tilde \mu }$ from a multi-variate Gaussian distribution, and solving the problem $argmax_i{b_i(t)^T\hat\mu(t)}$. Therefore, even if the number of arms N is large (or infinite), the above algorithm is efficient as long as the problem $argmax_i{b_i(t)^T\hat\mu(t)}$ is efficiently solvable. After choose an arm, then, we should decide to give how much payment to that work. For this part, we have to make sure the worker is rational and truthful. For the payment, we first record the worker's bid who have the max ${b_i(t)^T\hat\mu(t)}$, and then we temporarily put the worker aside who has been selected just now, and selected the other worker who has the max ${b_i(t)^T\hat\mu(t)}$ over the rest of workers. The requester then collects the rest worker's bid and choose a property one's bid, which will be as the payment of the first worker. Just as in our algorithms.
+
 \section{Analysis of AT-algorithm}
 
 \section{Simulation Experiments}
+\setlength{\parindent}{2em}This subsection gives a detail description of our experimental setup, including data collection, feature construction, performance evaluation.
+
+\subsection{Data Collection}
+Our dataset comes from MIT Reality Mining. It collected from 100 mobile phone users over the course of 9 month (September 2004 to June 2005) at MIT. The dataset includes the participants' message and phone call history, Bluetooth discovery records, answers of a survey etc. We again extract communication information and location based on phone call history. We use the before six month data as training set and the later part is used for testing algorithm. In train, we statistic every user who ever have gotten in touch with him, including call and message history. Through this, we can confirm everyone's contacts, and then in our algorithm we will regard the k members of his contacts as k arm bandits.
+
+\subsection{Feature Construction}
+
+\subsection{Performance}
 
 \section{Conclusion}
 
