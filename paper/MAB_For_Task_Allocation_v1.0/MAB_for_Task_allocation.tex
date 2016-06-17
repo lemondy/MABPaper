@@ -23,6 +23,7 @@
 \usepackage{paralist}
 \usepackage{caption}
 \usepackage{multirow}
+\usepackage{amsthm}
 
 \newtheorem{Lemma}{Lemma}
 \newtheorem{definition}{Definition}
@@ -188,20 +189,25 @@ Thompson sampling(TS) is one of the earliest heuristics for multi-armed bandit p
    \item a posterior distribution $P(\tilde \mu |D) \propto P(D|\tilde \mu )P(\tilde \mu )$, where $P(D|\tilde \mu)$  is the likelihood function.
  \end{itemize}
 
- In each round, TS plays an arm according to its posterior probability of having the best parameter. A simple way to achieve this is to produce a sample of parameter for each arm, using the posterior distribution, and play the arm that produces the best sample.
-
+ In each round, TS plays an arm according to its posterior probability of having the best parameter. A simple way to achieve this is to produce a sample of parameter for each arm, using the posterior distribution, and play the arm that produces the best sample. More specifically, the following are our major contributions in this paper:
+ \begin{enumerate}
+   \item We formulate the problem into a linear payoffs MAB problem that shall find optimal worker when there are tasks need to be allocated. Then we proposed a novel algorithm, Thompson Sampling Task Allocation(TS-TA) which make sure the worker is truthful and rational.
+   \item We proved that the regret has a lower bound, where any MAB algorithm has to suffer.
+   \item We conduct our simulations on real traces dataset to evaluate the TS-TA algorithm. The results show that the proposed algorithm can achieve O(logT) lower bound.
+ \end{enumerate}
+The remainder of the paper is organized as follows.We present a summary of the relevant work in Section 2. In Section 3, we introduce how multi-armed bandits can be model for task allocation problem. In Section 4, we formulate the task allocation problem. And next in Section 5, we proposed our algorithm thompson sampling for task allocation, which according to the thompson sampling to choose a worker to finish current work and then decide to give how much payment to that worker. In Section 6, we do some theory work to prove our algorithm's regret is bounded. In Section 8, we provide a simulation on a real dataset to  verify our algorithm. Conclusions is provided in Section 9.
 \section{RELATED WORK}
 
 \subsection{Task allocation}
+In this paper, we focus on the task assignment problem in mobile crowdsensing, which involves a lot of mobile users in solving a large job through their carried mobile devices \cite{ganti2011mobile}. By far, there have been several frameworks, platforms, and incentive mechanisms designed for crowdsensing system, \cite{cardone2013fostering}, \cite{farshad2014urban},\cite{feng2014trac},\cite{he2014toward}, \cite{ganti2011mobile}. Among them, the most related work is the LRBA algorithm designed for a task allocation problem in mobile crowdsensing \cite{he2014toward}. Unlike our work, the problem in this work pay attention to how to choose the worker who will provide better service and the tasks are location dependent.
 
-\subsection{Single-Agent Multi-Armed Bandit}
-
-Single-agent multi-armed bandit (SA-MAB) problem was first introduced in [1]. In the most seminal setting, the problem models an agent facing the challenge of sequentially selecting an arm from a set of arms in order to receive an a priori unknown reward, drawn from some unknown reward generating process. As a result of lack of prior information, at each trial, the player may choose some inferior arm in terms of reward, yielding some regret that is quantified by the difference between the reward that would have been achieved had the player selected the best arm and the actual achieved reward. In such an unknown setting, the player decides which arm to pull in a sequence of trials so that its accumulated regret over the game horizon is minimized. This problem is an instance of exploration-exploitation dilemma, i.e., the tradeoff between taking actions that yield immediate large rewards on the one hand and taking actions that might result in larger reward only in future, for instance activating an inferior arm only to acquire information, on the other hand. Therefore, SAMAB is mainly concerned with a sequential online decision making problem in an unknown environment. A solution of a bandit problem is thus a decision making strategy called policy or allocation rule, which determines which arm should be played at successive rounds. Policies are in general evaluated based on their regret or discounted reward performance.
-
-As mentioned before, MAB benefits from a wide range of variations in the setting. In the event that arms have different states, the reward depends on arms' states, and the bandit model is referred to as stateful (Markovian). Otherwise, the model is stateless, which itself can be divided to few subsets. As stateful and stateless bandits are inherently different, we discuss them separately in the following.
+On the other hand, our task assignment problem is also different from traditional parallel machine scheduling problems. In fact, there have been thousands of papers on parallel machine scheduling problems by far. Literatures \cite{allahverdi2008survey},\cite{cheng1990state} have made a detail review on these works. Even in recent years, there is still much research on the complex parallel machine scheduling problems, such as \cite{alidaee2014parallel},\cite{chekuri2001approximation}. The most related works among the existing researches is \cite{liu2015online}, who consider a crowd-sourcing problem where in the process of labeling massive datasets, multiple labelers with unknown annotation quality must be selected to perform the labeling task for each incoming data task. And they formulate it to MAB problems, then proposed an algorithm to solve it. In contrast, the tasks allocates has to consider the current context and then select a worker, what's more, the payment of workers' efforts also be taken into consideration. More specifically, each task being sent to a mobile worker is according to thompson sampling algorithm and the payment is decided just like an auction mechanism just like what have existed in crowdsourcing. Such a unique task assignment model makes our problem different from existing parallel machine scheduling problems.
 
 
+\subsection{MAB Algorithms}
+The fundamental challenge in bandit problems is the the need for balancing exploration and exploitation. Changing the aim of maximize reward to minimize the regret multiple experiments, an algorithm A will exploits its past experience to select the arm that appears best. On the other hand, this seemingly optimal arm may in fact be suboptimal, due to imprecision in A's knowledge. In other to avoid this undesired situation, A has to explore by actually choosing seemingly suboptimal arms to gather more information about them. Exploration can increasing short-term regret since some suboptimal arms may be chosen. However, obtaining information about the arms' average payoffs can refine A's estimate of the arms' payoffs and in turn reduce long-term regret. Clearly, neither a purely exploring nor a purely exploiting algorithm works best in general, and a good tradeoff is needed.
 
+There are a lot of literatures available on the MAB problem. Our problem belongs to the stochastic MAB setting, where the distribution function of reward of each arm is known but the parameter is unknown. A recent survey by Bubeck and Cesa-Bianchi \cite{bubeck2012regret} compiles several variations on stochastic and non-stochastic MAB problems. Our setting is very close to \cite{agrawal2012thompson} where a general bandit problem with linear payoff function which is related to the context. Our setting is a further concretization, as the context in our algorithm is concrete and we do some experiments to decide the weights of different feature which are used for the context.
 
 
 \begin{table}[!t]
@@ -276,9 +282,6 @@ ${p _i}^t$ & Payment of arm i\\
 \section{A Parallel with MAB}
 
 
-\section{Related Work on MAB Problem}
-
-
 \section{Model\&Problem}
 %Transform the task allocation into a multi-armed bandit problem.
 
@@ -312,13 +315,13 @@ ${\forall \lambda  \in R}$,$E[{e^{\lambda {\eta _{i,t}}}}|\{ {b_i}(t)\} _{i =1}^
 
 This assumption is satisfied whenever ${r_i}(t) \in [{b_i}{(t)^T}\mu  - c,{b_i}{(t)^T}\mu  + c]$ (see Remark 1 in Appendix Filippi et al.(2010)). We will also assume that $\left\| {{b_i}(t)} \right\| \le 1,\left\| \mu  \right\| \le 1$, and $regre{t_i}(t) \le 1$ for all i,t (the norms, unless otherwise indicated, are $L _2$-norms). These assumptions are required to make the regret bounds scale-free, and are standard in the literature on this problem. If $\left\| {{b_i}(t)} \right\| \le \alpha ,\left\| \mu  \right\| \le \alpha , regret_i (t) \le \alpha$ instead, then our regret bounds would increase by a factor of $\alpha$.
 
+
 we now define some of the desirable properties that an allocation policy show satisfy:\\
 \emph{\textbf{Definition 1} Allocation Efficiency(AE)}: An allocation policy $\pi$ is said to be allocation efficiency if it minimize the regret. Formally, $\pi$ is allocation efficiency if:
 
 \setlength{\parindent}{6em}$\pi  = \mathop {\arg \min R{E^\pi }}\limits_\pi$\\
 
-\setlength{\parindent}{0em}\ebbmph{\textbf{Definition 2} Dominant Strategy Incentive Compatibility(DSIC):} Mechanism $M$ is said to be DSIC if truth telling is a dominant strategy for all the workers. Formally,
-
+\setlength{\parindent}{0em}\emph{\textbf{Definition 2} Dominant Strategy Incentive Compatibility(DSIC):} Mechanism $M$ is said to be DSIC if truth telling is a dominant strategy for all the workers. Formally,\\
 
 \emph{\textbf{Definition 3} Individual Rationality(IR):} Mechanism M is said to be IR for a worker if participating in mechanism always gives him positive utility. Formally,
 %table
@@ -340,91 +343,6 @@ In this paper, we focus on how to choose a sequence of workers so as to maximize
 
 
 \section{Task allocation algorithm}
-
-\subsection {$\epsilon$-greedy-TA}
-\newpage
-\begin{algorithm}
-\renewcommand{\algorithmicrequire}{\textbf{Input:}}
-\renewcommand\algorithmicensure {\textbf{Output:}}
-\caption{$\varepsilon$-Greedy-TA}
-%\label{$\epsilon$-greedy-TA}
-
-\begin{algorithmic}[1]
-
-\REQUIRE
-    $K$: the number of arms;\newline
-    $R$: reward function;\newline
-    $T$: the round of times;\newline
-    $\epsilon$: probability
-
-\ENSURE  $r$:the accumulate reward.
-
-\STATE $r=0;$
-
-\STATE $\forall i = 1,2,...,K:Q(i) = 0,count(i) = 0;$
-\FOR {$t=1,2,...,T $}
-
-\IF {$rand()<\epsilon$}
-\STATE randomly choose one from 1,2,...,K and assignment to k
-\ELSE
-\STATE $k = \mathop {\arg \max }\limits_i Q(i)$
-\ENDIF
-\STATE $v=R(k);$
-\STATE $r=r+v;$
-\STATE $Q(k) = \frac{{Q(k)*count(k) + v}}{{count(k) + 1}};$
-\STATE $count(k)=count(k)+1;$
-
-\ENDFOR
-\end{algorithmic}
-\end{algorithm}
-
-%若摇臂奖励的不确定性较大，例如概率分布较宽时，则需要更多的探索，此时需要较大的\epsilon 值;
-%若摇臂奖励的不确定性较小，例如概率分布较集中，则少量的尝试就能很好地接近真实奖励，此时需要较小的\epsilon。
-if  the reward of the arm is very uncertainty, for example, its probability distrubutions contains too much value,
-then it will need more exploration, and then it need big $\epsilon$ value.Vice versa.
-
-\subsection {softmax-TA}
-
-In softmax algorithm, it acccording to the known mean reward of the arms to decide to choose which arm.
-If the mean reward is bigger, and the probability of choose this arm is bigger.
-
-And the probability distribution of choose a arm is Boltzmann distributions:
-\begin{equation}
-P(k) = \frac{{{e^{\frac{{Q(k)}}{\tau }}}}}{{\sum\limits_{i = 1}^K {{e^{\frac{{Q(i)}}{\tau }}}} }}
-\end{equation}
-
-Q(i) represent the mean reward upon now; $\tau >0$ is called "temperature", and when $\tau$ is very small, the mean reward bigger one will have
-higher probability to be choose.
-
-\begin{algorithm}
-\renewcommand{\algorithmicrequire}{\textbf{Input:}}
-\renewcommand\algorithmicensure {\textbf{Output:}}
-\caption{softmax-TA}
-%\label{$\epsilon$-greedy-TA}
-
-\begin{algorithmic}[2]
-
-\REQUIRE
-    $K$: the number of arms;\newline
-    $R$: reward function;\newline
-    $T$: the round of times;\newline
-    $\tau$: temperature parameter
-
-\ENSURE  $r$:the accumulate reward.
-
-\STATE $r=0;$
-\STATE $\forall i = 1,2,...,K:Q(i) = 0,count(i) = 0;$
-\FOR {$t=1,2,...,T $}
-
-\STATE randomly choose an arm from 1,2,...,K according to equation (1);
-\STATE $v=R(k);$
-\STATE $r=r+v;$
-\STATE $Q(k) = \frac{{Q(k)*count(k) + v}}{{count(k) + 1}};$
-\STATE $count(k)=count(k)+1;$
-\ENDFOR
-\end{algorithmic}
-\end{algorithm}
-
 
 \subsection {Thompson Sampling for Task Allocation}
 \setlength{\parindent}{2em}In this section, we will explain our Thompson Sampling algorithm for task allocation with incentive mechanism. The most important challenge is to balance exploitation with exploration. That is, we have two somewhat conflicting goals: (a) quickly find the best arm to pull and (b) pull the best arm as often as possible. Now we'll introduce the asymptotic optimal algorithm: Thompson Sampling.
@@ -450,7 +368,7 @@ let's say more clearly about the two probability:\\
  as $N(\hat \mu (t),{v^2}B{(t)^{ - 1}})$ (detail of this computation are in Appendix A.1). In our Thompson Sampling algorithm, at every time step t, we will simply generate a sample ${\hat \mu(t)}$ from $N(\hat \mu (t),{v^2}B{(t)^{ - 1}})$, and play the arm $i$ that maximizes ${b_i}{(t)^T}\hat \mu (t)$.
 
 \begin{algorithm}
-\caption{ThompsonSampling-TA}
+\caption{TS-TA}
 \begin{algorithmic}[3]
 
 \STATE Set $B=I _d, \hat \mu=0_d, f = 0_d$
@@ -477,6 +395,30 @@ let's say more clearly about the two probability:\\
 At every step t of Thompson Sampling task allocation algorithm consists of generating a d-dimensional sample ${\tilde \mu }$ from a multi-variate Gaussian distribution, and solving the problem $argmax_i{b_i(t)^T\hat\mu(t)}$. Therefore, even if the number of arms N is large (or infinite), the above algorithm is efficient as long as the problem $argmax_i{b_i(t)^T\hat\mu(t)}$ is efficiently solvable. After choose an arm, then, we should decide to give how much payment to that work. For this part, we have to make sure the worker is rational and truthful. For the payment, we first record the worker's bid who have the max ${b_i(t)^T\hat\mu(t)}$, and then we temporarily put the worker aside who has been selected just now, and selected the other worker who has the max ${b_i(t)^T\hat\mu(t)}$ over the rest of workers. The requester then collects the rest worker's bid and choose a property one's bid, which will be as the payment of the first worker. Just as in our algorithms.
 
 \section{Analysis of AT-algorithm}
+\setlength{\parindent}{2em}In this section, we provide theoretical guarantees for TS-TA. The contextual version of the multi-armed bandit problem presents new challenges for the analysis of TS algorithm, and the techniques used so far for analyzing the basic multi-armed bandit problem by \cite{agrawal2011analysis} do not seem directly applicable.
+
+%use label, you can in other place reference this theory through \ref{IR}
+\begin{Theorem}\label{IR}
+TS-TA is IR for all worker.
+\end{Theorem}
+
+\begin{proof}[Proof of TS-TA is IR]
+Here is the proof of IR.
+\end{proof}
+
+\begin{Theorem}\label{DSIC}
+TS-TA is DSIC.
+\end{Theorem}
+
+\begin{proof}
+here is proof of DSIC.
+\end{proof}
+
+\begin{Lemma}
+our regret is bounded.
+\end{Lemma}
+
+
 
 \section{Simulation Experiments}
 \setlength{\parindent}{2em}This subsection gives a detail description of our experimental setup, including data collection, feature construction, performance evaluation.
@@ -486,9 +428,17 @@ Our dataset comes from MIT Reality Mining. It collected from 100 mobile phone us
 
 \subsection{Feature Construction}
 
-We now describe the feature(also called context) constructed for our experiments. The features are used for our reward model, for we have define the reward as a linear payoffs.   
+We now describe the feature(also called context) constructed for our experiments. The features are used for our reward model, for we have define the reward as a linear payoffs.
+Context means what situation the requester meets in order to allocate the works, for example, how much is the worker's bid for the task, how many size there spares in worker's buffer and so on. Because when meets different context, the requester's choice is different. We start with raw context that were selected by "support". The support of a feature is the fraction of context. To reduce noise in the data, we only selected features with high support and do some preprocess. Then, each worker was originally represented by a raw feature vector, which include: \begin{itemize}
+                                                      \item \textbf{worker's bid for concurrent task}: the requester also should think of its utility (task's value minus the payment), and want to maximize its own utility.
+                                                      \item \textbf{worker's buffer size}: every worker have limits space or ability to finish limited worker, for which will make sure it suitable for reality.
+                                                      \item \textbf{the probability of accomplish a task}: this relates to worker's location and it's ability or willing to finish the task;
+                                                      \item \textbf{the number of have accomplished a kind of task}: there will exits several kinds of task, we will record the worker have finished how many times for every kind of task.
+                                                      \item \textbf{centrality}: this will be viewed as a factor, which may affect the requester's decision.
+                                                    \end{itemize}
+For this feature, we will do the normalization to make the feature's value belong to [0,1]. Other than these features, no other information was used to identify context.
 \subsection{Performance}
-
+This section we will show the result of experiments.
 \section{Conclusion}
 
 \setlength{\parindent}{2em}In this paper, we study the task allocation problem for crowdsensing. In order to select the best worker from the requester's contacts, we proposed thompson sampling allocation algorithm with incentive mechanism. This algorithm can make sure long run and keep the regret stay low. We showed that intuition from crowdsourcing mechansim is useful, and our algorithm follow the DISC and IR constrains. Analysis of TS-TA showed that it achieves regret of .
