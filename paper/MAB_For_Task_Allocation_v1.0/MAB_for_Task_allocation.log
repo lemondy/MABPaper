@@ -1,14 +1,14 @@
-This is XeTeX, Version 3.1415926-2.2-0.9997.4 (MiKTeX 2.9) (preloaded format=xelatex 2016.4.7)  11 MAY 2016 22:38
+This is XeTeX, Version 3.1415926-2.2-0.9997.4 (MiKTeX 2.9) (preloaded format=xelatex 2015.9.14)  19 JUN 2016 22:50
 entering extended mode
 **MAB_for_Task_allocation.tex
 
-(C:\Users\lemon\Desktop\MABForTA\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MA
-B_for_Task_allocation.tex
+(C:\Users\Administrator\Desktop\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MAB
+_for_Task_allocation.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for loaded.
 
-(C:\Users\lemon\Desktop\MABForTA\MABPaper\paper\MAB_For_Task_Allocation_v1.0\IE
-EEtran.cls
+(C:\Users\Administrator\Desktop\MABPaper\paper\MAB_For_Task_Allocation_v1.0\IEE
+Etran.cls
 Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -290,41 +290,56 @@ x to\hsize {\normalfont \sffamily \footnotesize \box \@tempboxa \hfil }\fi \fi
 .
 \c@ContinuedFloat=\count113
 Package caption Info: float package is loaded.
+) (F:\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
+\bigstrutjot=\dimen144
+)
+(F:\CTEX\MiKTeX\tex\latex\ams\classes\amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks25
+\thm@bodyfont=\toks26
+\thm@headfont=\toks27
+\thm@notefont=\toks28
+\thm@headpunct=\toks29
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks30
 )
 \c@Lemma=\count114
 \c@definition=\count115
 \c@Theorem=\count116
-Invalid UTF-8 byte or sequence at line 29 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 29 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 29 replaced by U+FFFD.
- (F:\CTEX\MiKTeX\tex\latex\tools\indentfirst.sty
+Invalid UTF-8 byte or sequence at line 32 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 32 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 32 replaced by U+FFFD.
+
+(F:\CTEX\MiKTeX\tex\latex\tools\indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 (F:\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen144
-\lightrulewidth=\dimen145
-\cmidrulewidth=\dimen146
-\belowrulesep=\dimen147
-\belowbottomsep=\dimen148
-\aboverulesep=\dimen149
-\abovetopsep=\dimen150
-\cmidrulesep=\dimen151
-\cmidrulekern=\dimen152
-\defaultaddspace=\dimen153
+\heavyrulewidth=\dimen145
+\lightrulewidth=\dimen146
+\cmidrulewidth=\dimen147
+\belowrulesep=\dimen148
+\belowbottomsep=\dimen149
+\aboverulesep=\dimen150
+\abovetopsep=\dimen151
+\cmidrulesep=\dimen152
+\cmidrulekern=\dimen153
+\defaultaddspace=\dimen154
 \@cmidla=\count117
 \@cmidlb=\count118
-\@aboverulesep=\dimen154
-\@belowrulesep=\dimen155
+\@aboverulesep=\dimen155
+\@belowrulesep=\dimen156
 \@thisruleclass=\count119
 \@lastruleclass=\count120
-\@thisrulewidth=\dimen156
+\@thisrulewidth=\dimen157
 )
 \c@myDef=\count121
-Invalid UTF-8 byte or sequence at line 36 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 36 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 36 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 36 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 39 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 39 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 39 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 39 replaced by U+FFFD.
 \c@myTheo=\count122
 
 (F:\CTEX\CTeX\tex\xelatex\xecjk\xeCJK.sty
@@ -376,13 +391,13 @@ Package: l3seq 2010/03/29 v1879 L3 Experimental sequences and stacks
 )
 (F:\CTEX\MiKTeX\tex\latex\expl3\l3toks.sty
 Package: l3toks 2010/09/20 v2037 L3 Experimental Token Registers
-\l_tmpb_toks=\toks25
-\l_tmpc_toks=\toks26
-\g_tmpa_toks=\toks27
-\g_tmpb_toks=\toks28
-\g_tmpc_toks=\toks29
-\c_empty_toks=\toks30
-\l_tl_replace_toks=\toks31
+\l_tmpb_toks=\toks31
+\l_tmpc_toks=\toks32
+\g_tmpa_toks=\toks33
+\g_tmpb_toks=\toks34
+\g_tmpc_toks=\toks35
+\c_empty_toks=\toks36
+\l_tl_replace_toks=\toks37
 )
 (F:\CTEX\MiKTeX\tex\latex\expl3\l3prg.sty
 Package: l3prg 2010/10/03 v2063 L3 Experimental control structures
@@ -402,35 +417,35 @@ Package: l3prop 2010/11/23 v2087 L3 Experimental Property Lists
 )
 (F:\CTEX\MiKTeX\tex\latex\expl3\l3msg.sty
 Package: l3msg 2010/10/02 v2052 L3 Experimental LaTeX Messages module
-\l_msg_redirect_classes_prop=\toks32
-\l_msg_redirect_names_prop=\toks33
-\l_msg_redirect_fatal_prop=\toks34
-\l_msg_redirect_error_prop=\toks35
-\l_msg_redirect_warning_prop=\toks36
-\l_msg_redirect_info_prop=\toks37
-\l_msg_redirect_log_prop=\toks38
-\l_msg_redirect_trace_prop=\toks39
-\l_msg_redirect_none_prop=\toks40
+\l_msg_redirect_classes_prop=\toks38
+\l_msg_redirect_names_prop=\toks39
+\l_msg_redirect_fatal_prop=\toks40
+\l_msg_redirect_error_prop=\toks41
+\l_msg_redirect_warning_prop=\toks42
+\l_msg_redirect_info_prop=\toks43
+\l_msg_redirect_log_prop=\toks44
+\l_msg_redirect_trace_prop=\toks45
+\l_msg_redirect_none_prop=\toks46
 )
 (F:\CTEX\MiKTeX\tex\latex\expl3\l3io.sty
 Package: l3io 2010/10/03 v2063 L3 Experimental i/o module
-\g_iow_streams_prop=\toks41
-\g_ior_streams_prop=\toks42
+\g_iow_streams_prop=\toks47
+\g_ior_streams_prop=\toks48
 \l_iow_stream_int=\count134
 )
 (F:\CTEX\MiKTeX\tex\latex\expl3\l3skip.sty
 Package: l3skip 2010/11/23 v2088 L3 Experimental skip registers
-\l_tmpa_skip=\skip53
-\l_tmpb_skip=\skip54
-\l_tmpc_skip=\skip55
-\g_tmpa_skip=\skip56
-\g_tmpb_skip=\skip57
-\l_tmpa_dim=\dimen157
-\l_tmpb_dim=\dimen158
-\l_tmpc_dim=\dimen159
-\l_tmpd_dim=\dimen160
-\g_tmpa_dim=\dimen161
-\g_tmpb_dim=\dimen162
+\l_tmpa_skip=\skip56
+\l_tmpb_skip=\skip57
+\l_tmpc_skip=\skip58
+\g_tmpa_skip=\skip59
+\g_tmpb_skip=\skip60
+\l_tmpa_dim=\dimen158
+\l_tmpb_dim=\dimen159
+\l_tmpc_dim=\dimen160
+\l_tmpd_dim=\dimen161
+\g_tmpa_dim=\dimen162
+\g_tmpb_dim=\dimen163
 )
 (F:\CTEX\MiKTeX\tex\latex\expl3\l3box.sty
 Package: l3box 2010/09/26 v2048 L3 Experimental Box module
@@ -451,8 +466,8 @@ Package: l3precom 2010/02/09 v1793 L3 Experimental precompilation module
 )
 (F:\CTEX\MiKTeX\tex\latex\expl3\l3xref.sty
 Package: l3xref 2010/02/09 v1786 L3 Experimental cross referencing
-\g_xref_all_curr_immediate_fields_prop=\toks43
-\g_xref_all_curr_deferred_fields_prop=\toks44
+\g_xref_all_curr_immediate_fields_prop=\toks49
+\g_xref_all_curr_deferred_fields_prop=\toks50
 )
 (F:\CTEX\MiKTeX\tex\latex\expl3\l3file.sty
 Package: l3file 2010/03/21 v1853 L3 Experimental file loading
@@ -510,8 +525,8 @@ Package: l3fp 2010/11/25 v2092 L3 Experimental floating-point operations
 \l_fp_trig_sign_int=\count187
 \l_fp_trig_decimal_int=\count188
 \l_fp_trig_extended_int=\count189
-\l_fp_tmp_dim=\dimen163
-\l_fp_tmp_skip=\skip58
+\l_fp_tmp_dim=\dimen164
+\l_fp_tmp_skip=\skip61
 )
 (F:\CTEX\MiKTeX\tex\latex\expl3\l3luatex.sty
 Package: l3luatex 2010/07/18 v1985 L3 Experimental LuaTeX functions
@@ -522,18 +537,18 @@ Package: l3luatex 2010/07/18 v1985 L3 Experimental LuaTeX functions
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count192
 \calc@Bcount=\count193
-\calc@Adimen=\dimen164
-\calc@Bdimen=\dimen165
-\calc@Askip=\skip59
-\calc@Bskip=\skip60
+\calc@Adimen=\dimen165
+\calc@Bdimen=\dimen166
+\calc@Askip=\skip62
+\calc@Bskip=\skip63
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count194
-\calc@Cskip=\skip61
+\calc@Cskip=\skip64
 ))
 (F:\CTEX\MiKTeX\tex\latex\xpackages\xbase\xparse.sty
 Package: xparse 2010/10/13 v2073 Generic document command parser
-\c_xparse_shorthands_prop=\toks45
+\c_xparse_shorthands_prop=\toks51
 \l_xparse_m_args_int=\count195
 \l_xparse_mandatory_args_int=\count196
 \l_xparse_processor_int=\count197
@@ -549,8 +564,8 @@ Variant \tl_gset:cV already defined; not changing it on line 79
 Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
 
 (F:\CTEX\MiKTeX\tex\generic\xkeyval\xkeyval.tex
-\XKV@toks=\toks46
-\XKV@tempa@toks=\toks47
+\XKV@toks=\toks52
+\XKV@tempa@toks=\toks53
 Normal \count register pool exhausted, switching to extended pool.
 \XKV@depth=\count277
 File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
@@ -657,7 +672,7 @@ LaTeX Info: Redefining \upshape on input line 2083.
 \xeCJK@cntc=\count281
 \xeCJK@cntd=\count282
 \xeCJK@cnte=\count283
-\xeCJK@dima=\dimen166
+\xeCJK@dima=\dimen167
 LaTeX Info: Redefining \normalfont on input line 807.
 LaTeX Info: Redefining \rmfamily on input line 816.
 LaTeX Info: Redefining \sffamily on input line 820.
@@ -669,212 +684,166 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
-(C:\Users\lemon\Desktop\MABForTA\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MA
-B_for_Task_allocation.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
+(C:\Users\Administrator\Desktop\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MAB
+_for_Task_allocation.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
 
 -- Lines per column: 61 (exact).
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
 Package xeCJK Warning: Unknown CJK family `sf' is ignored.
-Use \setCJKfamilyfont to define a CJK family. on input line 133.
+Use \setCJKfamilyfont to define a CJK family. on input line 136.
 
-LaTeX Font Info:    Try loading font information for EU1+lmss on input line 133
+LaTeX Font Info:    Try loading font information for EU1+lmss on input line 136
 .
 (F:\CTEX\MiKTeX\tex\latex\euenc\eu1lmss.fd
 File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <11.04124> not available
 
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 133.
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 136.
 
 LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 13
-3.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 133.
+6.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 136.
 
 (F:\CTEX\MiKTeX\tex\latex\base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 133.
+LaTeX Font Info:    Try loading font information for U+msa on input line 136.
 
 (F:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 133.
+LaTeX Font Info:    Try loading font information for U+msb on input line 136.
 
 (F:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+pzd on input line 133.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 136.
 
 (F:\CTEX\MiKTeX\tex\latex\psnfss\upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 133.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 136.
 
 
 LaTeX Font Warning: Font shape `EU1/lmss/bx/sc' undefined
-(Font)              using `EU1/lmss/bx/n' instead on input line 153.
+(Font)              using `EU1/lmss/bx/n' instead on input line 156.
 
 File: ./fig/mobile_crowdsensing.eps Graphic file (type eps)
 <./fig/mobile_crowdsensing.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 188
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 185
+.
+LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 187
 .
  [1
 
 
-]
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 243
-.
-
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
+] [2]
+Invalid UTF-8 byte or sequence at line 301 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 301 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 301 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 301 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 301 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 301 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 301 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 301 replaced by U+FFFD.
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
 
  []
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 259--260
+Underfull \hbox (badness 1377) in paragraph at lines 330--331
 []\EU1/lmr/bx/it/9.53561 Definition 2 \EU1/lmr/m/it/9.53561 Dominant Strategy I
 ncentive Compatibili-
  []
 
-[2]
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 320 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 321 replaced by U+FFFD.
- [3]
-Underfull \hbox (badness 10000) in paragraph at lines 373--376
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
 
  []
 
 
-Underfull \hbox (badness 2707) in paragraph at lines 381--382
+Underfull \hbox (badness 10000) in paragraph at lines 358--361
+
+ []
+
+
+Underfull \hbox (badness 2707) in paragraph at lines 366--367
 \EU1/lmr/m/n/9.53561 Sampling algorithm. More precisely, suppose that the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
 
  []
 
 
-Underfull \hbox (badness 5064) in paragraph at lines 385--387
+Underfull \hbox (badness 5064) in paragraph at lines 370--372
 \EU1/lmr/m/n/9.53561 Then, if the prior for $\OML/cmm/m/it/10 ^^V$ \EU1/lmr/m/n
 /9.53561 at time t is given by
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--387
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
 
  []
 
 
-Underfull \hbox (badness 2326) in paragraph at lines 399--400
+Underfull \hbox (badness 2326) in paragraph at lines 384--385
 [] []\EU1/lmr/m/n/9.53561 Update $\OML/cmm/m/it/10 B \OT1/cmr/m/n/10 = \OML/cmm
 /m/it/10 B \OT1/cmr/m/n/10 + [](\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )[][]\OML/cmm
 /m/it/10 ; f \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 f \OT1/cmr/m/n/10 +
  []
 
+[4]
+Invalid UTF-8 byte or sequence at line 531 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 531 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 531 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 531 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 531 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 531 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 531 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 531 replaced by U+FFFD.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+(C:\Users\Administrator\Desktop\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MAB
+_for_Task_allocation.bbl [5]) [6
 
-Invalid UTF-8 byte or sequence at line 503 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 503 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 503 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 503 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 503 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 503 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 503 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 503 replaced by U+FFFD.
-
-(C:\Users\lemon\Desktop\MABForTA\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MA
-B_for_Task_allocation.bbl) [4]
-(C:\Users\lemon\Desktop\MABForTA\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MA
-B_for_Task_allocation.aux)
+]
+(C:\Users\Administrator\Desktop\MABPaper\paper\MAB_For_Task_Allocation_v1.0\MAB
+_for_Task_allocation.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 14006 strings out of 430486
- 236061 string characters out of 3191695
- 331753 words of memory out of 3000000
- 16905 multiletter control sequences out of 15000+200000
+ 14107 strings out of 430486
+ 237331 string characters out of 3191694
+ 336089 words of memory out of 3000000
+ 17000 multiletter control sequences out of 15000+200000
  32796 words of font info for 159 fonts, out of 3000000 for 9000
  17 hyphenation exceptions out of 8191
- 45i,8n,73p,1636b,679s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,9n,73p,1636b,681s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on MAB_for_Task_allocation.pdf (4 pages).
+Output written on MAB_for_Task_allocation.pdf (6 pages).

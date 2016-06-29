@@ -1,0 +1,128 @@
+\begin{thebibliography}{10}
+
+\bibitem{agrawal1995sample}
+Rajeev Agrawal.
+\newblock Sample mean based index policies with o (log n) regret for the
+  multi-armed bandit problem.
+\newblock {\em Advances in Applied Probability}, pages 1054--1078, 1995.
+
+\bibitem{agrawal2011analysis}
+Shipra Agrawal and Navin Goyal.
+\newblock Analysis of thompson sampling for the multi-armed bandit problem.
+\newblock {\em arXiv preprint arXiv:1111.1797}, 2011.
+
+\bibitem{agrawal2012thompson}
+Shipra Agrawal and Navin Goyal.
+\newblock Thompson sampling for contextual bandits with linear payoffs.
+\newblock {\em arXiv preprint arXiv:1209.3352}, 2012.
+
+\bibitem{alidaee2014parallel}
+Bahram Alidaee and Haitao Li.
+\newblock Parallel machine selection and job scheduling to minimize sum of
+  machine holding cost, total machine time costs, and total tardiness costs.
+\newblock {\em Automation Science and Engineering, IEEE Transactions on},
+  11(1):294--301, 2014.
+
+\bibitem{allahverdi2008survey}
+Ali Allahverdi, CT~Ng, TC~Edwin Cheng, and Mikhail~Y Kovalyov.
+\newblock A survey of scheduling problems with setup times or costs.
+\newblock {\em European Journal of Operational Research}, 187(3):985--1032,
+  2008.
+
+\bibitem{auer2002finite}
+Peter Auer, Nicolo Cesa-Bianchi, and Paul Fischer.
+\newblock Finite-time analysis of the multiarmed bandit problem.
+\newblock {\em Machine learning}, 47(2-3):235--256, 2002.
+
+\bibitem{berry1985bandit}
+Donald~A Berry and Bert Fristedt.
+\newblock {\em Bandit problems: sequential allocation of experiments
+  (Monographs on statistics and applied probability)}.
+\newblock Springer, 1985.
+
+\bibitem{bubeck2012regret}
+S{\'e}bastien Bubeck and Nicolo Cesa-Bianchi.
+\newblock Regret analysis of stochastic and nonstochastic multi-armed bandit
+  problems.
+\newblock {\em arXiv preprint arXiv:1204.5721}, 2012.
+
+\bibitem{cardone2013fostering}
+Giuseppe Cardone, Luca Foschini, Paolo Bellavista, Antonio Corradi, Cristian
+  Borcea, Manoop Talasila, and Reza Curtmola.
+\newblock Fostering participaction in smart cities: a geo-social crowdsensing
+  platform.
+\newblock {\em Communications Magazine, IEEE}, 51(6):112--119, 2013.
+
+\bibitem{chekuri2001approximation}
+Chandra Chekuri, Rajeev Motwani, Balas Natarajan, and Clifford Stein.
+\newblock Approximation techniques for average completion time scheduling.
+\newblock {\em SIAM Journal on Computing}, 31(1):146--166, 2001.
+
+\bibitem{cheng1990state}
+TCE Cheng and CCS Sin.
+\newblock A state-of-the-art review of parallel-machine scheduling research.
+\newblock {\em European Journal of Operational Research}, 47(3):271--292, 1990.
+
+\bibitem{farshad2014urban}
+Azade Farshad, Mahesh~K Marina, and Francisco Garcia.
+\newblock Urban wifi characterization via mobile crowdsensing.
+\newblock In {\em Network Operations and Management Symposium (NOMS), 2014
+  IEEE}, pages 1--9. IEEE, 2014.
+
+\bibitem{feng2014trac}
+Zhenni Feng, Yanmin Zhu, Qian Zhang, Lionel~M Ni, and Athanasios~V Vasilakos.
+\newblock Trac: Truthful auction for location-aware collaborative sensing in
+  mobile crowdsourcing.
+\newblock In {\em INFOCOM, 2014 Proceedings IEEE}, pages 1231--1239. IEEE,
+  2014.
+
+\bibitem{ganti2011mobile}
+Raghu~K Ganti, Fan Ye, and Hui Lei.
+\newblock Mobile crowdsensing: current state and future challenges.
+\newblock {\em IEEE Communications Magazine}, 49(11):32--39, 2011.
+
+\bibitem{he2014toward}
+Shibo He, Dong-Hoon Shin, Junshan Zhang, and Jiming Chen.
+\newblock Toward optimal allocation of location dependent tasks in
+  crowdsensing.
+\newblock In {\em INFOCOM, 2014 Proceedings IEEE}, pages 745--753. IEEE, 2014.
+
+\bibitem{jain2014multiarmed}
+Shweta Jain, Balakrishnan Narayanaswamy, and Y~Narahari.
+\newblock A multiarmed bandit incentive mechanism for crowdsourcing demand
+  response in smart grids.
+\newblock In {\em Twenty-Eighth AAAI Conference on Artificial Intelligence},
+  2014.
+
+\bibitem{lai1985asymptotically}
+Tze~Leung Lai and Herbert Robbins.
+\newblock Asymptotically efficient adaptive allocation rules.
+\newblock {\em Advances in applied mathematics}, 6(1):4--22, 1985.
+
+\bibitem{liu2015online}
+Yang Liu and Mingyan Liu.
+\newblock An online learning approach to improving the quality of
+  crowd-sourcing.
+\newblock In {\em Proceedings of the 2015 ACM SIGMETRICS International
+  Conference on Measurement and Modeling of Computer Systems}, pages 217--230.
+  ACM, 2015.
+
+\bibitem{robbins1985some}
+Herbert Robbins.
+\newblock Some aspects of the sequential design of experiments.
+\newblock In {\em Herbert Robbins Selected Papers}, pages 169--177. Springer,
+  1985.
+
+\bibitem{thompson1933likelihood}
+William~R Thompson.
+\newblock On the likelihood that one unknown probability exceeds another in
+  view of the evidence of two samples.
+\newblock {\em Biometrika}, 25(3/4):285--294, 1933.
+
+\bibitem{xiao2015multi}
+Mingjun Xiao, Jie Wu, Liusheng Huang, Yunsheng Wang, and Cong Liu.
+\newblock Multi-task assignment for crowdsensing in mobile social networks.
+\newblock In {\em Computer Communications (INFOCOM), 2015 IEEE Conference on},
+  pages 2227--2235. IEEE, 2015.
+
+\end{thebibliography}

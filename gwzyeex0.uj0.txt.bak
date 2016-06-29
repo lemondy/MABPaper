@@ -1,0 +1,37 @@
+﻿Merge branch 'master' of https://github.com/lemondy/MABPaper
+
+# Conflicts:
+#	paper/MAB_For_Task_Allocation_v1.0/MAB_for_Task_allocation.log
+#	paper/MAB_For_Task_Allocation_v1.0/MAB_for_Task_allocation.pdf
+#	paper/MAB_For_Task_Allocation_v1.0/MAB_for_Task_allocation.synctex
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	deleted:    paper/MAB_For_Task_Allocation_v1.0/MAB_for_Task_allocation.aux
+#	deleted:    paper/MAB_For_Task_Allocation_v1.0/MAB_for_Task_allocation.log
+#	modified:   paper/MAB_For_Task_Allocation_v1.0/MAB_for_Task_allocation.pdf
+#	deleted:    paper/MAB_For_Task_Allocation_v1.0/MAB_for_Task_allocation.synctex
+#	modified:   paper/MAB_For_Task_Allocation_v1.0/MAB_for_Task_allocation.tex
+#	deleted:    paper/MAB_For_Task_Allocation_v1.0/MAB_for_Task_allocation.tex.bak
+#	deleted:    paper/MAB_For_Task_Allocation_v1.0/MAB_for_Task_allocation.tex.sav
+#	modified:   paper/MAB_For_Task_Allocation_v1.0/myreference.bib
+#	modified:   paper/MAB_TA.pptx
+#	new file:   paper/myreference/TRAC truthful auction for location-aware collaborative sensing in mobile crowdsourcing.pdf
+#	new file:   paper/myreference/fostering participaction in smart cities.pdf
+#	new file:   paper/myreference/mobile crowsensing current state and future challenges.pdf
+#	new file:   paper/myreference/toward optimal allocation of location dependent task in crowdsensing.pdf
+#	new file:   w23je5jx.cmf.txt.bak
+#
+

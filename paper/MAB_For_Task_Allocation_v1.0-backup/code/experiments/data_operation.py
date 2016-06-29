@@ -3,8 +3,8 @@
 import datetime
 import json
 
-datafile = open('./data/callspan.csv','r')
-contactStat = open('./data/contactstat.txt','w')
+datafile = open('../data/callspan.csv','r')
+contactStat = open('../data/contactstat.txt','w')
 
 #######################统计相遇记录##############################
 
@@ -40,8 +40,8 @@ contactStat.close()
 
 ############### 统计每个节点相遇过的节点（联系人）##############
 
-contactfile = open('./data/contactstat.txt','r')
-contactnode = open('./data/contactnode.json','w')
+contactfile = open('../data/contactstat.txt','r')
+contactnode = open('../data/contactnode.json','w')
 
 contactdict = {}
 
