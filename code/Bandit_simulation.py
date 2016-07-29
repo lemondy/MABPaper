@@ -102,7 +102,7 @@ def run_bandit_alg(true_rewards,CTRs_that_generated_data,choice_func):
     for i in range(0,num_samples):
         # pulling a lever & updating observed_data
         this_choice = choice_func(observed_data)
-
+        print 'this_choice',this_choice
         # update parameters
         if true_rewards[i,this_choice] == 1:
             update_ind = 0
