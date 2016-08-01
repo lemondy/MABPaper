@@ -1,43 +1,48 @@
 #/usr/bin/env python
 #-*- encoding:utf-8 -*-
-#import data_operation    #contactstat
+
+'''
+ This file is just an example our algorithm, before we actually begin to implements the algorithm.
+'''
+
 import random
 from task import Task
-from scipy import stats
 import math
 from scipy import linalg
 import numpy as np
 import matplotlib.pyplot as plt
 from data_operation import contactdict
 from workerNode import Worker
-from matplotlib.patches import ConnectionPatch
-#contactdict = data_operation.contactdict   #user contacts
+
+
 
 def getTaskValue(duration):
+	''''
+		Generate trapezoid task value.
+	'''
 	if duration < 6 * 3600:
 		value = round(duration / 36000.0, 3)
 	elif duration < 3600 * 7:
-		value = 0.6
+		value = 0.9
 	else:
-		value = round(0.8 - duration / 36000.0, 3)
+		value = round(1.0 - duration / 36000.0, 3)
 
 	return value if value > 0 else 0.1
 
 
-def getContextArray(rid, task, workers):
+def getContextArray(task, workers):
 	'''
 	 Get the requester's all worker's context, return an array
 	'''
 	context_list = list()
 
-	#the worker's buffer size is full then it can't accomplish more tasks
+	# the worker's buffer size is full then it can't accomplish more tasks
 	for worker in workers:
 		if worker.buffersize<=0:
-			workers.remove(worker)
+			workers.remove(worker)  # 这里会直接删除该对象，不存在移动后面的元素，能够正确的删除
 
 	for worker in workers:
 		temp = worker.getContext(task.value)
-		#temp.append(task.duration)
 		temp.append(task.value)
 		context_list.append(temp)
 	return np.array(context_list)
@@ -72,60 +77,6 @@ def generateTask(generate_rate):
 	print 'tid',tid
 	return taskslist
 
-'''
-# def  thompsonSampling(d, b, armsNumber, task):
-#
-# 	- d: feature dimension
-# 	- b: context
-# 	- armsNumber: the number of arms
-#
-# 	task_number = len(task)
-# 	true_rewards, generated_data = generate_true_data(armsNumber, task_number)
-# 	nums_samples, k = true_rewards.shape
-#
-# 	mu_true = np.random.rand(d)
-# 	#单位矩阵
-# 	B = np.identity(d)   #d*d
-# 	mu_param = np.zeros(d)
-# 	f = np.zeros(d)
-# 	R = 1.0
-# 	epsilon = 0.1
-# 	delta = 0.1
-#
-# 	v = round(R*math.pow((24.0/epsilon)*d*math.log(1.0/delta),1.0/2), 3)
-#
-# 	selectedArm = dict()
-# 	#cumulateregret = []
-# 	regret = np.zeros(task_number)
-# 	b_array = np.array(b)
-#
-# 	#for t in range(0, num_samples):
-# 	for t in task:
-# 		B_inv = linalg.inv(B) #inverse
-# 		temp = v*v*B_inv
-#
-# 		deviation = np.sqrt(temp.sum(1))
-# 		mu_sample = np.random.normal(mu_param, deviation)
-#
-# 		#对每一个context 计算 b*mu
-# 		selecteIndex = np.argmax(np.dot(b_array, mu_sample))
-# 		# if true_rewards[t, selecteIndex] == 1:
-# 		# 	reward = 0
-# 		# else:
-# 		# 	reward = 1
-# 		reward = workers[selecteIndex].executeTask(task.tasktype)
-#
-# 		regret[t] = np.max(generated_data[t,:]) - generated_data[t,selecteIndex]
-#
-# 		B += np.dot(b[selecteIndex].T, b[selecteIndex])
-# 		f += b[selecteIndex]*reward
-# 		mu_param = np.dot(B_inv.T, f)
-# 		#reward.append(maxValue)
-# 	cum_regret = np.cumsum(regret)
-# 	#print 'cum_regret',cum_regret
-# 	return cum_regret
-#
-'''
 
 def thompsonTaskAllocation(rid, dim, workers, tasklist):
 	'''
@@ -137,11 +88,7 @@ def thompsonTaskAllocation(rid, dim, workers, tasklist):
 
 	regret = np.zeros(len(tasklist))
 	reward_list = np.zeros(len(tasklist))
-	#armsNumber = len(workers)
 
-	#true_rewards, generated_data = generate_true_data(armsNumber, len(tasklist))
-
-	#mu_true = np.random.random((len(tasklist),dim))
 	mu_true = generate_true_mu(dim, len(tasklist))
 
 	B = np.identity(dim)
@@ -212,7 +159,6 @@ line_color.reverse()
 #regret_accumulator = np.zeros((num_samples, 7))
 
 for i in range(len(task_generate_rate)):
-	#cum_regret_sum[:,i] += thompsonTaskAllocation(Time, rid, generateTask(task_generate_rate[i]))
 	tasklist = generateTask(task_generate_rate[i])
 	regret_accumulator = np.zeros((len(tasklist), 1))
 	for number in range(num_experiments):

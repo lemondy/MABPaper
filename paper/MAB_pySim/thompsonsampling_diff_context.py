@@ -87,12 +87,11 @@ def thompsonTaskAllocation(tasklist, flag, d, B, f, mu_param, index):
 
 	payment = dict()  # worker:payment
 	for task in tasklist:
-	#while len(tasklist) != 0:
 		reward = 0
 		bid = []
 		worker_bid = dict()
 		context_array = getContextArray(task, workers, d, flag)
-		# wid_list = context_array.T[:1]
+
 		if flag:
 			context = np.array((context_array.T[2:]).T, dtype=float)
 		else:
@@ -100,13 +99,11 @@ def thompsonTaskAllocation(tasklist, flag, d, B, f, mu_param, index):
 
 		if len(context) == 0:
 			break
-		#i=0
-		#bid = []
+
 		for c in context_array:
-			# worker_bid[i][task_index] = c[1]  # worker's bid
 			worker_bid[(c[0],task)] = float(c[1]) # (wid,task): bid
 			#bid.append(c[1])
-			## i += 1
+
 		bid = np.array(worker_bid.values())  #bid is random generate
 		# select a worker who will accomplish the task success.
 		while reward == 0:
@@ -134,14 +131,10 @@ def thompsonTaskAllocation(tasklist, flag, d, B, f, mu_param, index):
 		else:
 			column = d-1
 		mu_sample = np.array(mu_sample)
-		if d==1 and flag == False:
+		if d==1:
 			regret[index, column] = abs(np.max(np.dot(context, mu_true[index])) - np.dot(context[selecteIndex], mu_sample))
-		elif flag==True:
-			regret[index, column] = abs(np.max(np.dot(context, mu_true[index, :].T)) - np.dot(context[selecteIndex, :], mu_sample))
 		else:
 			regret[index, column] = abs(np.max(np.dot(context, mu_true[index, :].T)) - np.dot(context[selecteIndex, :], mu_sample))
-
-		#regret[index] = abs(np.max(np.dot(context, mu_true[index,:].T)) - np.dot(context[selecteIndex,:], mu_sample))
 
 		wid=str(context_array[selecteIndex][0])
 		workers.remove(Worker(wid))  # one worker just can acccomplish one task
@@ -166,12 +159,7 @@ def thompsonTaskAllocation(tasklist, flag, d, B, f, mu_param, index):
 	return B, f, mu_param, index
 
 
-# cum_regret = np.cumsum(regret)
-# cum_reward = np.cumsum(reward_list)
-
-
 dim = [1,2,3,4,5]  # dimension of features
-# num_experiments = 100
 
 # 6个月的时刻
 starttime = 24485668
@@ -181,9 +169,8 @@ Time = 35242046  # diff 10756378  约为4个月
 task_generate_rate = 3600 * 3  # 1800 #
 tasksdict = dict()  # time:[task list]
 
-# generate task
+# generate task, every time slot generates several tasks.
 tid = 0  # count the amount of the task
-#index = 0  # the index of task
 
 for t in range(starttime, Time, task_generate_rate):
 	# node = random.randint(1,100)
@@ -288,10 +275,3 @@ plt.ylabel('Cumulative Utility',fontsize=18)
 plt.legend(('TS-TA-1', 'TS-TA-2', 'TS-TA-3', 'TS-TA-4','TS-TA-5','TS-TA-6'), loc='lower right')
 plt.grid(True)
 plt.show()
-
-# f=open('./diff_cum_regret.txt', 'w')
-# for i in range(6):
-# 	for j in range(tid):
-# 		f.write(''+utility[j,i])
-# 	f.write('\n')
-# f.close()

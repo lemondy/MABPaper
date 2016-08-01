@@ -15,7 +15,7 @@ firstline = dataset[0]
 items = firstline.split(',')
 
 timeformat = '%Y-%m-%d %H:%M:%S'
-#starttime
+# starttime
 begintime = datetime.datetime.strptime("2004-03-23 14:25:32",timeformat)
 
 for line in dataset:
@@ -47,7 +47,7 @@ contactdict = {}
 
 contacthis = contactfile.readlines()
 
-#六个月的数据构建联系人
+# 六个月的数据构建联系人
 endtime = datetime.datetime.strptime("2005-01-01 00:00:00",timeformat)
 
 durtime = int((endtime-begintime).total_seconds())

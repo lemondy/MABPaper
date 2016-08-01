@@ -3,9 +3,8 @@
 # @Date    : 2016-05-13 11:24:11
 # @Author  : lemondy (zhangyunruanjian@163.com)
 # @Link    : https://github.com/lemondy/MABPaper
-# @Version : $Id$
 
-#import os
+# import os
 
 class Task(object):
 	'define the structure of task' #task类型
@@ -15,7 +14,7 @@ class Task(object):
 		self.duration = duration
 		self.value = value
 		self.tasktype = tasktype
-	def __eq__(self, other):     #重定义这个方法可以实现对象之间的比较
+	def __eq__(self, other):     # 重载这个方法可以实现对象之间的比较
 		if self.tid == other.tid:
 			return True
 		else:

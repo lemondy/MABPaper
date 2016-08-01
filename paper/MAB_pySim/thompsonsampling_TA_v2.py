@@ -12,7 +12,6 @@ import matplotlib.pyplot as plt
 from data_operation import contactdict
 from workerNode import Worker
 
-
 ## bid is use round(random.uniform(value/4.0, value*1.50), 3)
 
 def getTaskValue(duration):
@@ -35,7 +34,6 @@ def getContextArray(task, worker_list):
 		temp = worker.getContext(task.value)
 		if temp[1]>task.value:
 			continue
-		#temp.append(task.duration)
 		temp.append(task.value)
 		context_list.append(temp)
 	return np.array(context_list)
@@ -73,7 +71,7 @@ def epsilon_greedy(tasklist, workers,index , column, epsilon=0.01):
 		bid = []
 		for worker in workers:
 			bid.append(worker.getBid(task.value))
-		while reward == 0:
+		while reward == 0:              # make sure the selected one finish the task success
 			totals =  observed_data.sum(1)
 			successes = observed_data[:,0]
 			estimated_means = successes / totals
@@ -83,7 +81,7 @@ def epsilon_greedy(tasklist, workers,index , column, epsilon=0.01):
 				selectedIndex = np.random.randint(0,len(workers))
 				while selectedIndex==best_mean:
 					selectedIndex = np.random.randint(0,len(workers))
-			else:
+			else:     # actually, if the epsilon is bigger, the harder it can choose the best mean one.
 				selectedIndex = best_mean
 			reward = workers[selectedIndex].executeTask(1)
 			if reward == 1:
@@ -144,14 +142,13 @@ def randomSelect(tasklist, workers, index):
 	selectedIndex = -1
 
 	for task in tasklist:
-
 		reward = 0
 		bid = []
 		for worker in workers:
 			bid.append(worker.getBid(task.value))
-		#while reward == 0:
-		selectedIndex = np.random.randint(0, len(workers))
-		reward = workers[selectedIndex].executeTask(1)
+		while reward == 0:
+			selectedIndex = np.random.randint(0, len(workers))
+			reward = workers[selectedIndex].executeTask(1)
 		u = (task.value - bid[selectedIndex])
 		utility[index, 3] = u
 		win_worker_bid = bid[selectedIndex]
@@ -223,27 +220,24 @@ def thompsonTaskAllocation(tasklist, B, f, mu_param, index):
 	:return:  cumulate regret
 	'''
 	win_worker = dict()
-	#worker_bid = np.zeros((len(workers),len(tasklist))) # all worker bid for all task
 
 	payment = dict()  # worker:payment
 	for task in tasklist:
 	#while len(tasklist) != 0:
 		reward = 0
 		bid = None
-		worker_bid = dict()
+		worker_bid = dict()  # (wid,task): bid
 		context_array = getContextArray(task, workers)
-		# wid_list = context_array.T[:1]
 		context = np.array((context_array.T[1:]).T, dtype=float)
 
 		if len(context) == 0:
 			break
-		#i=0
-		worker_threshold = []
+
 		for c in context_array:
 			# worker_bid[i][task_index] = c[1]  # worker's bid
-			worker_bid[(c[0],task)] = float(c[1])  # (wid,task): bid
+			worker_bid[(c[0],task)] = float(c[1])
 
-			## i += 1
+
 		bid = np.array(worker_bid.values())
 
 		# select a worker who will accomplish the task success.
@@ -265,9 +259,7 @@ def thompsonTaskAllocation(tasklist, B, f, mu_param, index):
 			mu_param = np.dot(B_inv.T, f)
 		regret.append(abs(np.max(np.dot(context, mu_true[index, :].T)) - np.dot(context[selecteIndex, :], mu_sample)))
 
-		#regret[index] = abs(np.max(np.dot(context, mu_true[index,:].T)) - np.dot(context[selecteIndex,:], mu_sample))
-
-		wid=str(context_array[selecteIndex][0])
+		wid=str(context_array[selecteIndex][0]) # worker id
 		workers.remove(Worker(wid))  # one worker just can acccomplish one task
 		win_worker[Worker(wid)] = task
 
@@ -290,48 +282,16 @@ def thompsonTaskAllocation(tasklist, B, f, mu_param, index):
 		#print 'pwid',payment[wid]
 		index += 1
 
-	# for worker_key in win_worker.keys():
-	# 	win_worker_copy = win_worker.copy()
-	# 	#del win_worker_copy[worker_key] # delete a element from the worker dict
-	# 	payment[worker_key] = 0 # init set to 0
-	# 	worker_bid_copy = worker_bid.copy()
-	#
-	# 	keys = filter(lambda x:x[0]==worker_key.wid,worker_bid_copy.keys()) # (wid, task)
-	# 	for key in keys:
-	# 		del worker_bid_copy[key]
-	# 	while True:
-	# 		if len(worker_bid_copy)==0:
-	# 			break
-	# 		# 求报价最小的worker和他完成的task
-	# 		item = min(worker_bid_copy.items(), key=lambda x:x[1]) # wid, task
-	# 		temp = filter(lambda x:x[0][1]==win_worker_copy[worker_key], worker_bid_copy.items())
-	# 		#if win_worker_copy[worker_key] in temp:
-	# 		if len(filter(lambda x:x[0][1]==win_worker_copy[worker_key], worker_bid_copy.items())) != 0:
-	# 			payment[worker_key] = max(payment[worker_key], float(item[1]))
-	# 		else:
-	# 			break
-	# 		keys = filter(lambda x:x[0] == item[0][0], worker_bid_copy.keys())
-	# 		for key in keys:  # delete worker
-	# 			del worker_bid_copy[key]
-	# 		keys = filter(lambda x:x[1] == item[0][1], worker_bid_copy.keys())
-	# 		for key in keys:  # delete all bid for a task
-	# 			del worker_bid_copy[key]
-	# 	utility.append(win_worker[worker_key].value - payment[worker_key])
-	# 	wid = str(worker_key.wid)
-	# 	t = win_worker[worker_key]
-	# 	if payment[worker_key] - float(worker_bid[(wid,t)]) <0:
-	# 		print 'payment-bid', payment[worker_key] - float(worker_bid[(wid,t)])
 	return B, f, mu_param, index
 
 dim=5  # dimension of features
-#num_experiments = 100
 
 # 6个月的时刻
 starttime = 24485668
 # 总的时间
 Time = 35242046        # diff 10756378  约为4个月
 
-task_generate_rate = 3600*3 # 1800 #
+task_generate_rate = 3600*3 # three hours
 tasksdict = dict()  # time:[task list]
 
 #generate task
@@ -351,11 +311,11 @@ for t in range(starttime, Time, task_generate_rate):
 	tasksdict[t] = tasklist
 
 print 'tid',tid
-rid = '68'
+rid = '68'  # requester id
 workers = []
 
 ## #thompson sampling parameter##
-#regret = np.zeros(tid)
+
 regret = list()
 
 mu_true = generate_true_mu(dim, tid)
@@ -434,21 +394,6 @@ for time in range(starttime, Time):
 		workers = []
 print 'random select is over.'
 
-# workers = []
-# print 'IMC-SM start executing...'
-# for time in range(starttime, Time):
-# 	if tasksdict.has_key(time):
-# 		for wid in contactdict[rid]:
-# 			workers.append(Worker(wid))
-# 		index_3 = crowdsourcingSelect(tasksdict[time], workers, index_3)
-# 		workers = []
-# print 'IMC-SM is over.'
-
-# workers_copy = []
-# for wid in contactdict[rid]:
-# 	workers.append(Worker(wid))
-# for worker in workers:
-# 	workers_select_times[(worker, worker.threshold)] = 0
 workers = []
 
 print 'thompson sampling start executing...'
@@ -463,39 +408,12 @@ for time in range(starttime, Time):
 
 print 'thompson sampling is over.'
 
-# worker_utility_avg = dict()
-# for wid in worker_utility.keys():
-# 	worker_utility_avg[wid] = sum(worker_utility[wid])
+worker_utility_avg = dict()
+for wid in worker_utility.keys():
+	worker_utility_avg[wid] = sum(worker_utility[wid])
 
 print 'algorithm run over, start plotting.'
 
-##used for plot
-# line_color = ["r","g","b","c","m","y","k"]
-# line_color.reverse()
-
-# for i in range(len(task_generate_rate)):
-# 	#cum_regret_sum[:,i] += thompsonTaskAllocation(Time, rid, generateTask(task_generate_rate[i]))
-# 	tasklist = generateTask(task_generate_rate[i])
-# 	regret_accumulator = np.zeros((len(tasklist), 1))
-# 	for number in range(num_experiments):
-# 		for wid in contactdict[rid]:
-# 			workers.append(Worker(wid))
-# 		regret_accumulator[:,0] += thompsonTaskAllocation(rid, d, workers, tasklist)  #allocate task
-# 		workers = []
-# 		print 'number',number
-# 	print 'task generate rate', task_generate_rate[i]
-# 	regret_accumulator /= num_experiments
-#
-# cum_regret_sum = np.cumsum(regret)
-# plt.semilogy(cum_regret_sum, linewidth=2)   #对数坐标图
-# #plt.plot(cum_regret_sum, linewidth=2)
-# #plt.plot(regret, linewidth=2)
-# plt.title('cum_regret_sum',fontsize=16)
-# plt.ylabel('Cumulative Regret',fontsize=16)
-# plt.xlabel('Round Index',fontsize=16)
-# plt.grid(True)
-# plt.show()
-#plt.legend(diff_rate,loc='lower right')
 utility[:,0] = np.cumsum(utility[:,0])
 utility[:,1] = np.cumsum(utility[:,1])
 utility[:,2] = np.cumsum(utility[:,2])
@@ -511,49 +429,49 @@ plt.legend(('epsilon-greedy','epoch-greedy','ucb','random select','TS-TA'),loc='
 plt.grid(True)
 plt.show()
 
-# social_welfare[:,0] = np.cumsum(social_welfare[:,0])
-# social_welfare[:,1] = np.cumsum(social_welfare[:,1])
-# social_welfare[:,2] = np.cumsum(social_welfare[:,2])
-# social_welfare[:,3] = np.cumsum(social_welfare[:,3])
-# social_welfare[:,4] = np.cumsum(social_welfare[:,4])
-# #cum_utility_sum = np.cumsum(utility)
-#plt.semilogy(cum_utility_sum, linewidth=2)
-# plt.plot(social_welfare,  linewidth=2)
-# #plt.title('Cumulative Social Welfare',fontsize=18)
-# plt.xlabel('The Number of Tasks',fontsize=18)
-# plt.ylabel('Cumulative Social Welfare',fontsize=18)
-# plt.legend(('epsilon-greedy','epoch-greedy','ucb','random select','TS-TA'),loc='upper left')
-# plt.grid(True)
-# plt.show()
+social_welfare[:,0] = np.cumsum(social_welfare[:,0])
+social_welfare[:,1] = np.cumsum(social_welfare[:,1])
+social_welfare[:,2] = np.cumsum(social_welfare[:,2])
+social_welfare[:,3] = np.cumsum(social_welfare[:,3])
+social_welfare[:,4] = np.cumsum(social_welfare[:,4])
 
-#plt.savefig('./fig_mu_true/'+diff_rate[i]+'.eps',format='eps')
-#plt.savefig('./fig_mu_true/'+diff_rate[i]+'.png',format='png')
+plt.plot(social_welfare,  linewidth=2)
+#plt.title('Cumulative Social Welfare',fontsize=18)
+plt.xlabel('The Number of Tasks',fontsize=18)
+plt.ylabel('Cumulative Social Welfare',fontsize=18)
+plt.legend(('epsilon-greedy','epoch-greedy','ucb','random select','TS-TA'),loc='upper left')
+plt.grid(True)
+plt.show()
 
-## bar chart
+## save the the plot pic to a file
+# plt.savefig('./fig_mu_true/'+diff_rate[i]+'.eps',format='eps')
+# plt.savefig('./fig_mu_true/'+diff_rate[i]+'.png',format='png')
 
-# worker_utility_sorted = sorted(worker_utility_avg.items(), key=lambda x:int(x[0]))
-# groups = len(worker_utility_sorted)
-# xvalue = map(lambda x:x[0], worker_utility_sorted)
-# yvalue = map(lambda x:x[1], worker_utility_sorted)
-#
-# x=[]
-# for i in range(len(xvalue)):
-# 	if i%2==1:
-# 		x.append(xvalue[i])
-# 	else:
-# 		x.append("")
-#
-# fig, ax = plt.subplots()
-# index = np.arange(groups)
-# bar_width= 0.5
-# # opacity = 0.4 # 透明度
-#
-# plt.bar(index, yvalue, bar_width)
-# #plt.title('Worker Utility Sum in TS-TA',fontsize=18)
-# plt.xlabel('Worker ID', fontsize=18)
-# plt.ylabel('The Sum of Utility', fontsize=18)
-# plt.xticks(index, x)
-#
-# plt.legend()
-# plt.tight_layout()
-# plt.show()
+# bar chart. Only plot the worker's utility in TS-TA
+
+worker_utility_sorted = sorted(worker_utility_avg.items(), key=lambda x:int(x[0]))
+groups = len(worker_utility_sorted)
+xvalue = map(lambda x:x[0], worker_utility_sorted)
+yvalue = map(lambda x:x[1], worker_utility_sorted)
+
+x=[]
+for i in range(len(xvalue)):
+	if i%2==1:
+		x.append(xvalue[i])
+	else:
+		x.append("")
+
+fig, ax = plt.subplots()
+index = np.arange(groups)
+bar_width= 0.5
+# opacity = 0.4 # 透明度
+
+plt.bar(index, yvalue, bar_width)
+#plt.title('Worker Utility Sum in TS-TA',fontsize=18)
+plt.xlabel('Worker ID', fontsize=18)
+plt.ylabel('The Sum of Utility', fontsize=18)
+plt.xticks(index, x)
+
+plt.legend()
+plt.tight_layout()
+plt.show()

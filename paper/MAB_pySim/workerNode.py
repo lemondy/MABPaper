@@ -4,27 +4,14 @@
 # @Author  : lemondy
 # @email   : lemondy9@gmail.com
 # @Link    : https://github.com/lemondy
-# @Version : 
 ###########################
 
 import random
 import json
 
-contactnode = open(r'C:\Users\lemon\Desktop\MABForTA\MABPaper\paper\MAB_For_Task_Allocation_v1.0\code\data\contactnode.json','r')
+contactnode = open(r'.\data\contactnode.json','r')
 data = contactnode.read()
 contact = json.JSONDecoder().decode(data)
-
-'''
-class Context(object):
-	def __init__(self, probability=.0, bid=.0, buffersize=50, centrality=0, numberOfTask1=0, numberOfTask2=0, numberOfTask3=0):
-		self.probability = probability
-		self.bid = bid
-		self.buffersize = buffersize
-		self.centrality = centrality
-		self.numberOfTask1 = numberOfTask1
-		self.numberOfTask2 = numberOfTask2
-		self.numberOfTask3 = numberOfTask3
-'''
 
 class Worker(object):
 	'''
@@ -40,7 +27,7 @@ class Worker(object):
 	numberOfTask3=0
 	numberOfTask = 0
 
-	threshold = round(random.random(), 2)  # every worker have different probability to accomplish the task
+	threshold = round(random.random(), 2)  # every worker have different probability to accomplish the task. This doesn't works, because every worker have the same threshold.
 
 	def __init__(self, wid, buffersize=50, numberOfTask=0):
 		self.wid = wid  #worker id
@@ -52,7 +39,6 @@ class Worker(object):
 		return round(random.random(), 3)  #keep three number
 
 	def getBid(self,value):
-
 		return round(random.random(), 3)  # return bid
 		#return round(random.uniform(value/4.0, value*1.50), 3)
 
@@ -77,11 +63,7 @@ class Worker(object):
 		context.append(probability)
 		context.append(buffersize)
 		context.append(centrality)
-		#context.append(self.numberOfTask1)
-		#context.append(self.numberOfTask2)
-		#context.append(self.numberOfTask3)
-		#context.append(self.numberOfTask)
-		#context = Context(probability, bid, buffersize, centrality, self.numberOfTask1, self.numberOfTask2, self.numberOfTask3)
+
 		return context
 
 	def executeTask(self,taskType):
